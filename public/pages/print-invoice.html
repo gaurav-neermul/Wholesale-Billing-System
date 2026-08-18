@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Invoice</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/print-invoice.css">
+
+</head>
+
+<body>
+
+    <div class="row align-items-center mb-4">
+
+        <div class="col-3 text-center">
+
+            <img src="../images/logo.jpg" alt="Company Logo" class="company-logo">
+
+        </div>
+
+        <div class="col-9 text-center">
+
+            <h2 class="fw-bold mb-1">
+<br>
+                MADHVI PRODUCT
+
+            </h2>
+
+            <div>
+
+                Marigold Ave, Belle Mare
+
+            </div>
+
+            <div>
+
+                Tel:
+                <span id="companyTel"></span>
+
+                &nbsp;&nbsp;
+
+                Mobile:
+                <span id="companyMobile"></span>
+
+            </div>
+
+            <div>
+
+                WhatsApp:
+                <span id="companyWhatsapp"></span>
+
+                &nbsp;&nbsp;
+
+                Email:
+                <span id="companyEmail"></span>
+
+            </div>
+
+            <div>
+
+                BRN:
+                <span id="companyBrn"></span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <h4 class="text-center mb-4">
+
+        CREDIT SALES
+
+    </h4>
+
+    <div class="row">
+
+        <div class="col-8">
+
+            <p>
+
+                <strong>Customer :</strong>
+
+                <span id="customerName"></span>
+
+            </p>
+
+            <p>
+
+                <strong>Address :</strong>
+
+                <span id="customerAddress"></span>
+
+            </p>
+
+            <p>
+
+                <strong>PO Number :</strong>
+
+                <span id="customerPo"></span>
+
+            </p>
+
+            <p>
+
+                <strong>Remarks :</strong>
+
+                <span id="remarks"></span>
+
+            </p>
+
+        </div>
+
+        <div class="col-4">
+
+            <p>
+
+                <strong>Invoice No :</strong>
+
+                <span id="invoiceNumber"></span>
+
+            </p>
+
+            <p>
+
+                <strong>Date :</strong>
+
+                <span id="invoiceDate"></span>
+
+            </p>
+
+            <p>
+
+                <strong>BRN :</strong>
+
+                <span id="customerBrn">-</span>
+                
+
+            </p>
+
+        </div>
+
+    </div>
+    <hr>
+
+    <table class="table table-bordered align-middle" id="invoiceTable">
+
+        <thead>
+
+            <tr>
+
+                <th width="10%" class="text-center">
+
+                    Qty
+
+                </th>
+
+                <th>
+
+                    Description
+
+                </th>
+
+                <th width="18%" class="text-end">
+
+                    Unit Price
+
+                </th>
+
+                <th width="18%" class="text-end">
+
+                    Total
+
+                </th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="invoiceItems">
+
+        </tbody>
+
+        <tfoot>
+
+            <tr>
+
+                <td colspan="3" class="text-end fw-bold">
+
+                    GRAND TOTAL
+
+                </td>
+
+                <td class="text-end fw-bold" id="grandTotal">
+
+                    Rs 0.00
+
+                </td>
+
+            </tr>
+
+        </tfoot>
+
+    </table>
+
+    <div class="mt-4">
+
+        <strong>
+
+            Goods once sold cannot be returned.
+
+        </strong>
+
+        <br>
+
+        Cheque should be made payable to
+
+        <strong>
+
+            John Abraham
+
+        </strong>
+
+    </div>
+
+    <div class="row mt-5">
+
+        <div class="col-4 text-center">
+
+            ______________________
+
+            <br>
+
+            Proprietor Signature
+
+        </div>
+
+        <div class="col-4 text-center">
+
+            ______________________
+
+            <br>
+
+            Receiver Name
+
+        </div>
+
+        <div class="col-4 text-center">
+
+            ______________________
+
+            <br>
+             Receiver Signature
+
+        </div>
+
+    </div>
+    <div class="d-flex justify-content-center gap-3 mt-5 no-print">
+
+        <button class="btn btn-primary" id="printBtn">
+
+            <i class="bi bi-printer me-2"></i>
+
+            Print Invoice
+
+        </button>
+
+        <button class="btn btn-secondary" onclick="window.close()">
+
+            Close
+
+        </button>
+
+    </div>
+
+    </div>
+
+    <script src="../js/print-invoice.js"></script>
+
+</body>
+
+</html>

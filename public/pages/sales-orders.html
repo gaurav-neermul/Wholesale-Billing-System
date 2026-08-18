@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Orders | Wholesale Billing System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/toast.css">
+</head>
+
+<body>
+    <!-- burger pou portable -->
+    <nav class="navbar navbar-dark bg-dark sticky-top d-lg-none shadow-sm">
+
+        <div class="container-fluid">
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#mobileSidebar" aria-controls="mobileSidebar">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <span class="navbar-brand fw-semibold">
+
+                <i class="bi bi-box-seam me-2"></i>
+
+                Wholesale Billing System
+
+            </span>
+
+        </div>
+
+    </nav>
+
+    <!-- tinini tinini sidebar -->
+    <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="mobileSidebar">
+
+        <div class="offcanvas-header border-bottom border-secondary">
+
+            <div>
+
+                <h4 class="mb-0">
+
+                    WBS
+
+                </h4>
+
+                <small class="text-secondary">
+
+                    Wholesale Billing System
+
+                </small>
+
+            </div>
+
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas">
+            </button>
+
+        </div>
+
+        <div class="offcanvas-body p-0">
+
+            <nav class="nav flex-column">
+
+                <a href="dashboard.html" class="nav-link text-white px-4 py-3">
+                    <i class="bi bi-speedometer2 me-2"></i>
+                    Dashboard
+                </a>
+
+                <div class="text-uppercase text-secondary small fw-bold px-4 pt-4 pb-2">
+                    Sales
+                </div>
+
+                <a href="customers.html" class="nav-link text-white px-4 py-3">
+                    <i class="bi bi-people-fill me-2"></i>
+                    Customers
+                </a>
+
+                <a href="sales-orders.html" class="nav-link active bg-primary text-white px-4 py-3">
+                    <i class="bi bi-cart-check me-2"></i>
+                    Sales Orders
+                </a>
+
+                <a href="invoices.html" class="nav-link text-white px-4 py-3">
+                    <i class="bi bi-receipt me-2"></i>
+                    Invoices
+                </a>
+
+                <a href="payments.html" class="nav-link text-white px-4 py-3">
+                    <i class="bi bi-cash-stack me-2"></i>
+                    Payments
+                </a>
+
+                <div class="text-uppercase text-secondary small fw-bold px-4 pt-4 pb-2">
+                    Inventory
+                </div>
+
+                <a href="products.html" class="nav-link text-white px-4 py-3">
+                    <i class="bi bi-box-seam me-2"></i>
+                    Products
+                </a>
+
+                <a href="inventory.html" class="nav-link text-white px-4 py-3">
+                    <i class="bi bi-boxes me-2"></i>
+                    Stock
+                </a>
+
+                <div class="text-uppercase text-secondary small fw-bold px-4 pt-4 pb-2">
+                    Reports
+                </div>
+
+                <a href="statements.html" class="nav-link text-white px-4 py-3">
+                    <i class="bi bi-file-earmark-text me-2"></i>
+                    Statement of Account
+                </a>
+
+                <a href="reports.html" class="nav-link text-white px-4 py-3">
+                    <i class="bi bi-bar-chart-line me-2"></i>
+                    Reports
+                </a>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <!-- desktop sidebar -->
+
+            <aside
+                class="d-none d-lg-flex flex-column col-lg-2 bg-dark text-white p-0 position-fixed top-0 start-0 vh-100 shadow">
+
+                <div class="text-center py-4 border-bottom border-secondary">
+
+                    <h3 class="mb-1">
+
+                        WBS
+
+                    </h3>
+
+                    <small class="text-secondary">
+
+                        Wholesale Billing System
+
+                    </small>
+
+                </div>
+
+                <nav class="nav flex-column flex-grow-1">
+
+                    <a href="dashboard.html" class="nav-link text-white px-4 py-3">
+                        <i class="bi bi-speedometer2 me-2"></i>
+                        Dashboard
+                    </a>
+
+                    <div class="text-uppercase text-secondary small fw-bold px-4 pt-4 pb-2">
+                        Sales
+                    </div>
+
+                    <a href="customers.html" class="nav-link text-white px-4 py-3">
+                        <i class="bi bi-people-fill me-2"></i>
+                        Customers
+                    </a>
+
+                    <a href="sales-orders.html" class="nav-link active bg-primary text-white px-4 py-3">
+                        <i class="bi bi-cart-check me-2"></i>
+                        Sales Orders
+                    </a>
+
+                    <a href="invoices.html" class="nav-link text-white px-4 py-3">
+                        <i class="bi bi-receipt me-2"></i>
+                        Invoices
+                    </a>
+
+                    <a href="payments.html" class="nav-link text-white px-4 py-3">
+                        <i class="bi bi-cash-stack me-2"></i>
+                        Payments
+                    </a>
+
+                    <div class="text-uppercase text-secondary small fw-bold px-4 pt-4 pb-2">
+                        Inventory
+                    </div>
+
+                    <a href="products.html" class="nav-link text-white px-4 py-3">
+                        <i class="bi bi-box-seam me-2"></i>
+                        Products
+                    </a>
+
+                    <a href="inventory.html" class="nav-link text-white px-4 py-3">
+                        <i class="bi bi-boxes me-2"></i>
+                        Stock
+                    </a>
+
+                    <div class="text-uppercase text-secondary small fw-bold px-4 pt-4 pb-2">
+                        Reports
+                    </div>
+
+                    <a href="statements.html" class="nav-link text-white px-4 py-3">
+                        <i class="bi bi-file-earmark-text me-2"></i>
+                        Statement of Account
+                    </a>
+
+                    <a href="reports.html" class="nav-link text-white px-4 py-3">
+                        <i class="bi bi-bar-chart-line me-2"></i>
+                        Reports
+                    </a>
+
+                </nav>
+
+            </aside>
+
+            <!-- content koumans la  -->
+
+            <main class="col-12 col-lg-10 offset-lg-2 p-4 mt-3 mt-lg-0">
+
+                <header class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h2 class="mb-0">
+                            Sales Orders
+                        </h2>
+                        <p class="text-muted mb-0">
+                            Manage customer sales orders
+                        </p>
+                    </div>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addSalesOrderModal">
+                        <i class="bi bi-plus-circle me-2"></i>
+                        New Sales Order
+                    </button>
+                </header>
+
+                <section class="mb-4">
+
+                    <div class="row g-3">
+
+                        <div class="col-md-3">
+
+                            <div class="card border-0 shadow-sm">
+
+                                <div class="card-body">
+
+                                    <small class="text-muted">
+                                        Pending Orders
+                                    </small>
+
+                                    <h3 class="mb-0" id="pendingOrdersCount">
+
+                                        0
+
+                                    </h3>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3">
+
+                            <div class="card border-0 shadow-sm">
+
+                                <div class="card-body">
+
+                                    <small class="text-muted">
+                                        Invoiced Orders
+                                    </small>
+
+                                    <h3 class="mb-0" id="invoicedOrdersCount">
+
+                                        0
+
+                                    </h3>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+  
+
+                        <div class="col-md-3">
+
+                            <div class="card border-0 shadow-sm">
+
+                                <div class="card-body">
+
+                                    <small class="text-muted">
+                                        Total Orders
+                                    </small>
+
+                                    <h3 class="mb-0" id="totalOrdersCount">
+
+                                        0
+
+                                    </h3>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- search sales -->
+                <section class="mb-4">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="bi bi-search"></i>
+                                </span>
+                                <input type="text" class="form-control" id="searchSalesOrder"
+                                    placeholder="Search sales orders...">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- sales table -->
+                <section>
+
+                    <div class="row mb-4">
+
+                        <div class="col-md-4">
+
+                            <select class="form-select" id="customerFilter">
+
+                                <option value="">
+                                    All Customers
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-md-3">
+
+                            <select class="form-select" id="statusFilter">
+
+                                <option value="">
+                                    All Statuses
+                                </option>
+
+                                <option value="Pending">
+                                    Pending
+                                </option>
+
+                                <option value="Invoiced">
+                                    Invoiced
+                                </option>
+
+       
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                    <div id="salesOrdersContainer" class="row g-4">
+
+                    </div>
+
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- add sales order mdll-->
+
+    <div class="modal fade" id="addSalesOrderModal" tabindex="-1" aria-hidden="true">
+
+        <div class="modal-dialog modal-xl">
+
+            <div class="modal-content">
+
+                <form id="addSalesOrderForm">
+
+                    <div class="modal-header">
+
+                        <h5 class="modal-title">
+                            New Sales Order
+                        </h5>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal">
+                        </button>
+
+                    </div>
+
+                    <div class="modal-body">
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label" for="customer">
+
+                                    Customer
+
+                                </label>
+
+                                <select class="form-select" id="customer" required>
+
+                                    <option value="">
+                                        Select Customer
+                                    </option>
+
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label" for="customerPo">
+
+                                    Customer PO Number
+
+                                </label>
+
+                                <input type="text" class="form-control" id="customerPo" placeholder="Optional">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+
+                            <label for="deliveryDate" class="form-label">
+
+                                Delivery Date
+
+                            </label>
+
+                            <input type="date" class="form-control" id="deliveryDate">
+
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="remarks">
+                                Remarks
+                            </label>
+                            <textarea class="form-control" id="remarks" rows="2">
+                        </textarea>
+                        </div>
+                        <hr>
+                        <h5 class="mb-3">
+                            Products
+                        </h5>
+                        <div class="row align-items-end">
+                            <div class="col-md-5">
+                                <label class="form-label">
+                                    Product
+                                </label>
+                                <select class="form-select" id="product">
+                                    <option value="">
+                                        Select Product
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label">
+                                    Quantity
+                                </label>
+                                <input type="number" class="form-control" id="quantity" min="1">
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label">
+                                    Unit Price
+                                </label>
+                                <input type="number" class="form-control" id="unitPrice" step="0.01">
+                            </div>
+                            <div class="col-md-3">
+                                <button type="button" class="btn btn-success w-100" id="addItemBtn">
+                                    <i class="bi bi-plus-circle me-2"></i>
+                                    Add Item
+                                </button>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th width="120">
+                                            Qty
+                                        </th>
+                                        <th width="150">
+                                            Unit Price
+                                        </th>
+                                        <th width="150">
+                                            Total
+                                        </th>
+                                        <th width="80">
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="orderItemsTableBody">
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="text-end">
+                            <h4>
+                                Grand Total :
+                                <span id="grandTotal">
+                                    Rs 0.00
+                                </span>
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Cancel
+                        </button>
+                        <button type="submit" class="btn btn-primary" id="saveSalesOrderBtn">
+                            Save Sales Order
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Removed Product Modals -->
+    <div class="modal fade" id="editProductModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="editProductForm">
+                    <div class="modal-header">
+                        <h5 class="modal-title">
+                            Edit Product
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" id="editProductId">
+                        <div class="mb-3">
+                            <label for="editProductName" class="form-label">
+                                Product Name
+                            </label>
+                            <input type="text" class="form-control" id="editProductName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editDefaultPrice" class="form-label">
+                                Default Price
+                            </label>
+                            <input type="number" class="form-control" id="editDefaultPrice" min="0" step="0.01"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editMinimumStock" class="form-label">
+                                Minimum Stock
+                            </label>
+                            <input type="number" class="form-control" id="editMinimumStock" min="0" step="0.01">
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="editTrackInventory">
+                            <label class="form-check-label" for="editTrackInventory">
+                                Track Inventory
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Cancel
+                        </button>
+                        <button type="submit" class="btn btn-primary" id="updateProductBtn">
+                            Update Product
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+ 
+    <!-- view sales order mdl -->
+    <div class="modal fade" id="viewSalesOrderModal" tabindex="-1" aria-hidden="true">
+
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title">
+
+                        Sales Order Details
+
+                    </h5>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                    </button>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="row mb-3">
+
+                        <div class="col-md-6">
+
+                            <strong>Customer</strong>
+
+                            <p id="viewCustomer" class="mb-0"></p>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <strong>Status</strong>
+
+                            <p id="viewStatus" class="mb-0"></p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row mb-3">
+
+                        <div class="col-md-6">
+
+                            <strong>Customer PO Number</strong>
+
+                            <p id="viewCustomerPo" class="mb-0"></p>
+
+                        </div>
+                        <div class="col-md-6">
+
+                            <strong>Delivery Date</strong>
+
+                            <p id="viewDeliveryDate" class="mb-0"></p>
+
+                        </div>
+                        <div class="col-md-6">
+
+                            <strong>Order Date</strong>
+
+                            <p id="viewOrderDate" class="mb-0"></p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <strong>Remarks</strong>
+
+                        <p id="viewRemarks" class="mb-0"></p>
+
+                    </div>
+
+                    <hr>
+
+                    <h6 class="mb-3">
+
+                        Products
+
+                    </h6>
+
+                    <div class="table-responsive">
+
+                        <table class="table table-bordered">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>Product</th>
+
+                                    <th width="120">Qty</th>
+
+                                    <th width="150">Unit Price</th>
+
+                                    <th width="150">Total</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="viewItemsTableBody">
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                    <div class="text-end">
+
+                        <h4>
+
+                            Grand Total :
+
+                            <span id="viewGrandTotal">
+
+                                Rs 0.00
+
+                            </span>
+
+                        </h4>
+
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+
+                        Close
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Delete Sales Order Modal -->
+
+    <div class="modal fade" id="deleteSalesOrderModal" tabindex="-1" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title">
+
+                        Delete Sales Order
+
+                    </h5>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                    </button>
+
+                </div>
+
+                <div class="modal-body">
+
+                    Are you sure you want to delete this sales order?
+
+                    <br><br>
+
+                    <strong class="text-danger">
+
+                        This action cannot be undone.
+
+                    </strong>
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+
+                        Cancel
+
+                    </button>
+
+                    <button type="button" class="btn btn-danger" id="confirmDeleteBtn">
+
+                        Delete
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+  <div
+    class="modal fade"
+    id="generateInvoiceModal"
+    tabindex="-1"
+    aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+
+                    <i class="bi bi-receipt me-2"></i>
+
+                    Generate Invoice
+
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <p class="mb-2">
+                    Are you sure you want to generate an invoice
+                    for this sales order?
+                </p>
+
+                <div class="alert alert-light border mb-0">
+
+                    <i class="bi bi-info-circle me-2"></i>
+
+                    The invoice will be created as a
+                    <strong>Draft</strong>.
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-success"
+                    id="confirmGenerateInvoiceBtn">
+
+                    <i class="bi bi-receipt me-1"></i>
+
+                    Generate Invoice
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>  
+    <!-- show toast -->
+    <div id="toastContainer" class="toast-container position-fixed bottom-0 end-0 p-3">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/toast.js"></script>
+    <script src="../js/sales-orders.js"></script>
+</body>
+
+</html>

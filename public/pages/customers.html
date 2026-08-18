@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers | Wholesale Billing System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/toast.css">
+</head>
+
+<body>
+<!-- burger pou portable -->
+<nav class="navbar navbar-dark bg-dark sticky-top d-lg-none shadow-sm">
+
+    <div class="container-fluid">
+
+        <button
+            class="navbar-toggler border-0"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#mobileSidebar"
+            aria-controls="mobileSidebar">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <span class="navbar-brand fw-semibold">
+
+            <i class="bi bi-box-seam me-2"></i>
+
+            Wholesale Billing System
+
+        </span>
+
+    </div>
+
+</nav>
+
+<!-- tinini tinini sidebar -->
+<div
+    class="offcanvas offcanvas-start bg-dark text-white"
+    tabindex="-1"
+    id="mobileSidebar">
+
+    <div class="offcanvas-header border-bottom border-secondary">
+
+        <div>
+
+            <h4 class="mb-0">
+
+                WBS
+
+            </h4>
+
+            <small class="text-secondary">
+
+                Wholesale Billing System
+
+            </small>
+
+        </div>
+
+        <button
+            type="button"
+            class="btn-close btn-close-white"
+            data-bs-dismiss="offcanvas">
+        </button>
+
+    </div>
+
+    <div class="offcanvas-body p-0">
+
+        <nav class="nav flex-column">
+
+            <a href="dashboard.html" class="nav-link text-white px-4 py-3">
+                <i class="bi bi-speedometer2 me-2"></i>
+                Dashboard
+            </a>
+
+            <div class="text-uppercase text-secondary small fw-bold px-4 pt-4 pb-2">
+                Sales
+            </div>
+
+            <a href="customers.html" class="nav-link active bg-primary  text-white px-4 py-3">
+                <i class="bi bi-people-fill me-2"></i>
+                Customers
+            </a>
+
+            <a href="sales-orders.html" class="nav-link text-white px-4 py-3">
+                <i class="bi bi-cart-check me-2"></i>
+                Sales Orders
+            </a>
+
+            <a href="invoices.html" class="nav-link text-white px-4 py-3">
+                <i class="bi bi-receipt me-2"></i>
+                Invoices
+            </a>
+
+            <a href="payments.html" class="nav-link text-white px-4 py-3">
+                <i class="bi bi-cash-stack me-2"></i>
+                Payments
+            </a>
+
+            <div class="text-uppercase text-secondary small fw-bold px-4 pt-4 pb-2">
+                Inventory
+            </div>
+
+            <a href="products.html" class="nav-link text-white px-4 py-3">
+                <i class="bi bi-box-seam me-2"></i>
+                Products
+            </a>
+
+            <a href="inventory.html" class="nav-link text-white px-4 py-3">
+                <i class="bi bi-boxes me-2"></i>
+                Stock
+            </a>
+
+            <div class="text-uppercase text-secondary small fw-bold px-4 pt-4 pb-2">
+                Reports
+            </div>
+
+            <a href="statements.html" class="nav-link text-white px-4 py-3">
+                <i class="bi bi-file-earmark-text me-2"></i>
+                Statement of Account
+            </a>
+
+            <a href="reports.html" class="nav-link text-white px-4 py-3">
+                <i class="bi bi-bar-chart-line me-2"></i>
+                Reports
+            </a>
+
+        </nav>
+
+    </div>
+
+</div>
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <!-- desktop sidebar -->
+
+        <aside class="d-none d-lg-flex flex-column col-lg-2 bg-dark text-white p-0 position-fixed top-0 start-0 vh-100 shadow">
+
+            <div class="text-center py-4 border-bottom border-secondary">
+
+                <h3 class="mb-1">
+
+                    WBS
+
+                </h3>
+
+                <small class="text-secondary">
+
+                    Wholesale Billing System
+
+                </small>
+
+            </div>
+
+            <nav class="nav flex-column flex-grow-1">
+
+                <a href="dashboard.html" class="nav-link text-white px-4 py-3">
+                    <i class="bi bi-speedometer2 me-2"></i>
+                    Dashboard
+                </a>
+
+                <div class="text-uppercase text-secondary small fw-bold px-4 pt-4 pb-2">
+                    Sales
+                </div>
+
+                <a href="customers.html" class="nav-link  active bg-primary  text-white px-4 py-3">
+                    <i class="bi bi-people-fill me-2"></i>
+                    Customers
+                </a>
+
+                <a href="sales-orders.html" class="nav-link text-white px-4 py-3">
+                    <i class="bi bi-cart-check me-2"></i>
+                    Sales Orders
+                </a>
+
+                <a href="invoices.html" class="nav-link text-white px-4 py-3">
+                    <i class="bi bi-receipt me-2"></i>
+                    Invoices
+                </a>
+
+                <a href="payments.html" class="nav-link text-white px-4 py-3">
+                    <i class="bi bi-cash-stack me-2"></i>
+                    Payments
+                </a>
+
+                <div class="text-uppercase text-secondary small fw-bold px-4 pt-4 pb-2">
+                    Inventory
+                </div>
+
+                <a href="products.html" class="nav-link text-white px-4 py-3">
+                    <i class="bi bi-box-seam me-2"></i>
+                    Products
+                </a>
+
+                <a href="inventory.html" class="nav-link text-white px-4 py-3">
+                    <i class="bi bi-boxes me-2"></i>
+                    Stock
+                </a>
+
+                <div class="text-uppercase text-secondary small fw-bold px-4 pt-4 pb-2">
+                    Reports
+                </div>
+
+                <a href="statements.html" class="nav-link text-white px-4 py-3">
+                    <i class="bi bi-file-earmark-text me-2"></i>
+                    Statement of Account
+                </a>
+
+                <a href="reports.html" class="nav-link text-white px-4 py-3">
+                    <i class="bi bi-bar-chart-line me-2"></i>
+                    Reports
+                </a>
+
+            </nav>
+
+        </aside>
+
+        <!-- content koumans la  -->
+
+        <main class="col-12 col-lg-10 offset-lg-2 p-4 mt-3 mt-lg-0">
+                <header class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h2 class="mb-0">
+                            Customers
+                        </h2>
+                        <p class="text-muted mb-0">
+                            Manage customer information
+                        </p>
+                    </div>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCustomerModal">
+                        <i class="bi bi-plus-circle me-2"></i>
+                        Add Customer
+                    </button>
+                </header>
+                <!-- this  is for the search bar -->
+                <section class="mb-4">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="bi bi-search"></i>
+                                </span>
+                                <input type="text" class="form-control" id="searchCustomer"
+                                    placeholder="Search customer...">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- the customer table-->
+                <section>
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Company</th>
+                                    <th>BRN</th>
+                                    <th>Address</th>
+                                    <th>Status</th>
+                                    <th class="text-center">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="customerTableBody">
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </main>
+
+        </div>
+    </div>
+
+    <!-- the cust modal -->
+
+    <div class="modal fade" id="addCustomerModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <form id="addCustomerForm">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title">
+                            Add Customer
+                        </h5>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal">
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <div class="mb-3">
+                            <label for="companyName" class="form-label">
+                                Company Name
+                            </label>
+
+                            <input type="text" class="form-control" id="companyName" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="companyBrn" class="form-label">
+                                BRN
+                            </label>
+
+                            <input type="text" class="form-control" id="companyBrn" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="companyAddress" class="form-label">
+                                Address
+                            </label>
+
+                            <textarea class="form-control" id="companyAddress" rows="3" required></textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Cancel
+                        </button>
+
+                        <button type="submit" class="btn btn-primary" id="saveCustomerBtn">
+                            Save Customer
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <!-- edit the customer modal -->
+    <div class="modal fade" id="editCustomerModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="editCustomerForm">
+                    <div class="modal-header">
+                        <h5 class="modal-title">
+                            Edit Customer
+                        </h5>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal">
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <input type="hidden" id="editCustomerId">
+
+                        <div class="mb-3">
+                            <label for="editCompanyName" class="form-label">
+                                Company Name
+                            </label>
+
+                            <input type="text" class="form-control" id="editCompanyName" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="editCompanyBrn" class="form-label">
+                                BRN
+                            </label>
+
+                            <input type="text" class="form-control" id="editCompanyBrn" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="editCompanyAddress" class="form-label">
+                                Address
+                            </label>
+
+                            <textarea class="form-control" id="editCompanyAddress" rows="3" required></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Cancel
+                        </button>
+
+                        <button type="submit" class="btn btn-primary">
+                            Update Customer
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div id="toastContainer" class="toast-container position-fixed bottom-0 end-0 p-3">
+    </div>
+    <!-- sts confirm modal -->
+    <div class="modal fade" id="statusModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="statusModalTitle">
+                        Change Customer Status
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="statusModalMessage">
+                        Confirmation message goes here.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Cancel
+                    </button>
+                    <button type="button" class="btn btn-danger" id="confirmStatusBtn">
+                        Confirm
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/toast.js"></script>
+    <script src="../js/customers.js"></script>
+</body>
+
+</html>
