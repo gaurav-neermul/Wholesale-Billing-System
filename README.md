@@ -1,6 +1,6 @@
-# WDS — Wholesale Billing System
+# WBS — Wholesale Billing System
 
-WDS (Wholesale Billing System) is a web-based wholesale billing and distribution management application built around the day-to-day flow of customers, products, sales orders, invoices, inventory, payments, statements of account, and business reports.
+WBS (Wholesale Billing System) is a web-based wholesale billing and distribution management application built around the day-to-day flow of customers, products, sales orders, invoices, inventory, payments, statements of account, and business reports.
 
 The system is designed to connect these operations instead of treating them as separate CRUD screens.
 
@@ -33,7 +33,7 @@ The system is designed to connect these operations instead of treating them as s
 
 ## Overview
 
-WDS is intended for a wholesale distribution business that needs to manage the complete sales and billing lifecycle.
+WBS is intended for a wholesale distribution business that needs to manage the complete sales and billing lifecycle.
 
 The central workflow is:
 
@@ -71,7 +71,7 @@ The application also provides a dashboard and reporting layer for monitoring bus
 
 ## Core Workflow
 
-A typical transaction in WDS works as follows:
+A typical transaction in WBS works as follows:
 
 1. A customer is created or selected.
 2. Products are created with their default prices and inventory settings.
@@ -81,7 +81,7 @@ A typical transaction in WDS works as follows:
 6. The sales order is converted into a draft invoice.
 7. The draft invoice can be reviewed and edited.
 8. The invoice is finalized.
-9. For inventory-tracked products, WDS validates stock and deducts the invoiced quantities.
+9. For inventory-tracked products, WBS validates stock and deducts the invoiced quantities.
 10. A payment is recorded and allocated to finalized invoices.
 11. The customer's Statement of Account reflects finalized invoices and payments.
 12. Dashboard and report data can be used to monitor the business.
@@ -221,7 +221,7 @@ The dashboard provides an operational overview including:
 
 ## Architecture
 
-WDS uses a simple client-server architecture.
+WBS uses a simple client-server architecture.
 
 ```text
 ┌─────────────────────────────┐
@@ -250,7 +250,7 @@ WDS uses a simple client-server architecture.
 ## Project Structure
 
 ```text
-WDS/
+WBS/
 ├── database/
 │   ├── schema.sql
 │   
@@ -544,7 +544,7 @@ GET    /dashboard
 
 ## Invoice and Inventory Workflow
 
-This is one of the key business rules in WDS.
+This is one of the key business rules in WBS.
 
 ### Stage 1 — Generate Invoice
 
@@ -709,7 +709,7 @@ Recent activity displays the latest invoices, payments, and sales orders.
 
 ### Requirements
 
-Install the following before running WDS:
+Install the following before running WBS:
 
 - Node.js
 - npm
@@ -731,7 +731,7 @@ npm install
 
 ### 3. Create the database
 
-Create a PostgreSQL database for WDS.
+Create a PostgreSQL database for WBS.
 
 Run the tracked schema file:
 
@@ -745,7 +745,7 @@ The schema creates the application's tables, constraints, indexes, and relations
 
 Create a local `.env` file containing the PostgreSQL connection settings.
 
-### 5. Start WDS
+### 5. Start WBS
 
 The project does not currently define an `npm start` script. Start the application directly with:
 
@@ -784,7 +784,7 @@ The tracked database definition is:
 database/schema.sql
 ```
 
-The local `database/wds.sql` file is ignored by Git.
+
 
 If a clean test database is needed, run the schema first and then populate the system through the application.
 
@@ -828,7 +828,7 @@ node_modules/
 
 `database/schema.sql` remains tracked because it is the clean database definition for the project.
 
-`database/wds.sql` is intentionally local and ignored.
+
 
 `.env` must remain local because it can contain database credentials.
 
@@ -836,7 +836,7 @@ node_modules/
 
 ### No separate manual stock-out module
 
-WDS does not use a standalone manual stock-out workflow.
+WBS does not use a standalone manual stock-out workflow.
 Normal stock reduction occurs when a tracked-product invoice is finalized.
 Manual corrections are handled through the inventory adjustment operation.
 
@@ -858,7 +858,7 @@ Operations that modify multiple related records use PostgreSQL transactions wher
 
 ## Current Limitations
 
-WDS is a functional project application, not a finished production ERP.
+WBS is a functional project application, not a finished production ERP.
 
 Known limitations include:
 
@@ -891,7 +891,7 @@ Potential future work includes:
 
 ## Project Name
 
-# WDS — Wholesale Billing System
+# WBS — Wholesale Billing System
 
 Wholesale billing and distribution management application.
 
