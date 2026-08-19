@@ -906,7 +906,8 @@ This project is licensed under the **MIT License**.
 
 **Gaurav Neermul**
 
-- **GitHub:** https://github.com/Gaurav-WB
+- **GitHub:** https://github.com/Gaurav-wb
+- **Email:** neermulgn@gmail.com
 - **LinkedIn:** https://www.linkedin.com/in/gaurav-neermul-ng/
 
 ---
