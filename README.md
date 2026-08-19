@@ -29,7 +29,7 @@ The system is designed to connect these operations instead of treating them as s
 - [Important Design Decisions](#important-design-decisions)
 - [Current Limitations](#current-limitations)
 - [Future Improvements](#future-improvements)
-- [Hackathon Demo Flow](#hackathon-demo-flow)
+
 
 ## Overview
 
