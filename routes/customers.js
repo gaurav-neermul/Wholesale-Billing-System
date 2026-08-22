@@ -21,23 +21,38 @@ router.get("/", async (req, res) => { //If someone reaches the customers route, 
 
 });
 
+
+
 router.post("/", async (req, res) => {
 
     try {
 
-        const { company_name, company_brn, address } = req.body;
+        const {
+            company_name,
+            company_brn,
+            address,
+            phone_number
+        } = req.body;
+
         const result = await db.query(
             `INSERT INTO customers
-            (company_name, company_brn, address)
-            VALUES ($1, $2, $3)
+            (company_name, company_brn, address, phone_number)
+            VALUES ($1, $2, $3, $4)
             RETURNING *`,
-            [company_name, company_brn, address]
+            [
+                company_name,
+                company_brn,
+                address,
+                phone_number
+            ]
         );
+
         res.status(201).json({
             success: true,
             message: "Customer created successfully.",
             customer: result.rows[0]
         });
+
     } catch (error) {
         console.error(error);
         res.status(500).json({
@@ -49,11 +64,21 @@ router.post("/", async (req, res) => {
 
 });
 
+
+
 router.put("/:id", async (req, res) => {
 
     try {
+
         const { id } = req.params;
-        const { company_name, company_brn, address } = req.body;
+
+        const {
+            company_name,
+            company_brn,
+            address,
+            phone_number
+        } = req.body;
+
         const result = await db.query(
             `
             UPDATE customers
@@ -61,23 +86,33 @@ router.put("/:id", async (req, res) => {
                 company_name = $1,
                 company_brn = $2,
                 address = $3,
+                phone_number = $4,
                 updated_at = CURRENT_TIMESTAMP
-            WHERE customer_id = $4
+            WHERE customer_id = $5
             RETURNING *;
             `,
-            [company_name, company_brn, address, id]
+            [
+                company_name,
+                company_brn,
+                address,
+                phone_number,
+                id
+            ]
         );
+
         if (result.rows.length === 0) {
             return res.status(404).json({
                 success: false,
                 message: "Customer not found."
             });
         }
+
         res.status(200).json({
             success: true,
             message: "Customer updated successfully.",
             customer: result.rows[0]
         });
+
     } catch (error) {
         console.error(error);
         res.status(500).json({
@@ -90,11 +125,13 @@ router.put("/:id", async (req, res) => {
 });
 
 
+
 //PATCH updates only the specific field you want to change, not the entire resource. for example changing is_active to false
 // PATCH - Activate / Deactivate Customer
 // it updts oonly specific fields 
 router.patch("/:id/status", async (req, res) => {
     try {
+
         const { id } = req.params;
         const { is_active } = req.body;
 
@@ -109,6 +146,7 @@ router.patch("/:id/status", async (req, res) => {
             `,
             [is_active, id]
         );
+
         if (result.rows.length === 0) {
 
             return res.status(404).json({
@@ -117,11 +155,13 @@ router.patch("/:id/status", async (req, res) => {
             });
 
         }
+
         res.status(200).json({
             success: true,
             message: "Customer status updated successfully.",
             customer: result.rows[0]
         });
+
     } catch (error) {
         console.error(error);
         res.status(500).json({
@@ -130,4 +170,6 @@ router.patch("/:id/status", async (req, res) => {
         });
     }
 });
+
+
 module.exports = router;

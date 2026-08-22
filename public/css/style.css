@@ -722,3 +722,13 @@ hr {
 .table thead th:last-child {
     border-top-right-radius: 12px;
 }
+
+.status-cell {
+    text-align: left !important;
+}
+
+.status-cell .status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}

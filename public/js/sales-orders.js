@@ -79,6 +79,16 @@ let customers = [];
 let products = [];
 let orderItems = [];
 
+function formatDate(value) {
+    if (!value) return "-";
+
+    const datePart = String(value).split("T")[0];
+    const [year, month, day] = datePart.split("-");
+
+    if (!year || !month || !day) return "-";
+
+    return `${day}/${month}/${year}`;
+}
 
 function updateDashboardCards() {
 
@@ -270,25 +280,25 @@ function addItem() {
         item => item.product_id === Number(product.value)
     );
 
-if (!selectedProduct) {
+    if (!selectedProduct) {
 
-    showToast(
-        "Selected product is not available.",
-        "danger"
-    );
+        showToast(
+            "Selected product is not available.",
+            "danger"
+        );
 
-    return;
-}
+        return;
+    }
 
-if (!selectedProduct.is_active) {
+    if (!selectedProduct.is_active) {
 
-    showToast(
-        "This product is inactive and cannot be added to a sales order.",
-        "danger"
-    );
+        showToast(
+            "This product is inactive and cannot be added to a sales order.",
+            "danger"
+        );
 
-    return;
-}
+        return;
+    }
 
     if (Number(quantity.value) <= 0) {
         showToast("Quantity must be greater than zero.", "danger");
@@ -479,7 +489,7 @@ function displaySalesOrders(salesOrders) {
 
                                         <td>
 
-                                            ${new Date(order.order_date).toLocaleDateString()}
+                                            ${formatDate(order.order_date)}
 
                                         </td>
 
@@ -497,10 +507,7 @@ function displaySalesOrders(salesOrders) {
 
                                         <td>
 
-                                            ${order.delivery_date
-                ? new Date(order.delivery_date).toLocaleDateString()
-                : "-"
-            }
+                          ${formatDate(order.delivery_date)}
 
                                         </td>
 
@@ -916,13 +923,10 @@ async function openViewSalesOrder(event) {
             order.customer_po_number || "-";
 
         viewOrderDate.textContent =
-            new Date(order.order_date).toLocaleDateString();
+            formatDate(order.order_date);
 
         viewDeliveryDate.textContent =
-            order.delivery_date
-                ? new Date(order.delivery_date).toLocaleDateString()
-                : "-";
-
+            formatDate(order.delivery_date);
         viewRemarks.textContent =
             order.remarks || "-";
 

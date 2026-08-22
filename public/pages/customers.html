@@ -12,148 +12,42 @@
 </head>
 
 <body>
-<!-- burger pou portable -->
-<nav class="navbar navbar-dark bg-dark sticky-top d-lg-none shadow-sm">
+    <!-- burger pou portable -->
+    <nav class="navbar navbar-dark bg-dark sticky-top d-lg-none shadow-sm">
 
-    <div class="container-fluid">
+        <div class="container-fluid">
 
-        <button
-            class="navbar-toggler border-0"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#mobileSidebar"
-            aria-controls="mobileSidebar">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#mobileSidebar" aria-controls="mobileSidebar">
 
-            <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
 
-        </button>
+            </button>
 
-        <span class="navbar-brand fw-semibold">
+            <span class="navbar-brand fw-semibold">
 
-            <i class="bi bi-box-seam me-2"></i>
-
-            Wholesale Billing System
-
-        </span>
-
-    </div>
-
-</nav>
-
-<!-- tinini tinini sidebar -->
-<div
-    class="offcanvas offcanvas-start bg-dark text-white"
-    tabindex="-1"
-    id="mobileSidebar">
-
-    <div class="offcanvas-header border-bottom border-secondary">
-
-        <div>
-
-            <h4 class="mb-0">
-
-                WBS
-
-            </h4>
-
-            <small class="text-secondary">
+                <i class="bi bi-box-seam me-2"></i>
 
                 Wholesale Billing System
 
-            </small>
+            </span>
 
         </div>
 
-        <button
-            type="button"
-            class="btn-close btn-close-white"
-            data-bs-dismiss="offcanvas">
-        </button>
+    </nav>
 
-    </div>
+    <!-- tinini tinini sidebar -->
+    <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="mobileSidebar">
 
-    <div class="offcanvas-body p-0">
+        <div class="offcanvas-header border-bottom border-secondary">
 
-        <nav class="nav flex-column">
+            <div>
 
-            <a href="dashboard.html" class="nav-link text-white px-4 py-3">
-                <i class="bi bi-speedometer2 me-2"></i>
-                Dashboard
-            </a>
-
-            <div class="text-uppercase text-secondary small fw-bold px-4 pt-4 pb-2">
-                Sales
-            </div>
-
-            <a href="customers.html" class="nav-link active bg-primary  text-white px-4 py-3">
-                <i class="bi bi-people-fill me-2"></i>
-                Customers
-            </a>
-
-            <a href="sales-orders.html" class="nav-link text-white px-4 py-3">
-                <i class="bi bi-cart-check me-2"></i>
-                Sales Orders
-            </a>
-
-            <a href="invoices.html" class="nav-link text-white px-4 py-3">
-                <i class="bi bi-receipt me-2"></i>
-                Invoices
-            </a>
-
-            <a href="payments.html" class="nav-link text-white px-4 py-3">
-                <i class="bi bi-cash-stack me-2"></i>
-                Payments
-            </a>
-
-            <div class="text-uppercase text-secondary small fw-bold px-4 pt-4 pb-2">
-                Inventory
-            </div>
-
-            <a href="products.html" class="nav-link text-white px-4 py-3">
-                <i class="bi bi-box-seam me-2"></i>
-                Products
-            </a>
-
-            <a href="inventory.html" class="nav-link text-white px-4 py-3">
-                <i class="bi bi-boxes me-2"></i>
-                Stock
-            </a>
-
-            <div class="text-uppercase text-secondary small fw-bold px-4 pt-4 pb-2">
-                Reports
-            </div>
-
-            <a href="statements.html" class="nav-link text-white px-4 py-3">
-                <i class="bi bi-file-earmark-text me-2"></i>
-                Statement of Account
-            </a>
-
-            <a href="reports.html" class="nav-link text-white px-4 py-3">
-                <i class="bi bi-bar-chart-line me-2"></i>
-                Reports
-            </a>
-
-        </nav>
-
-    </div>
-
-</div>
-
-<div class="container-fluid">
-
-    <div class="row">
-
-        <!-- desktop sidebar -->
-
-        <aside class="d-none d-lg-flex flex-column col-lg-2 bg-dark text-white p-0 position-fixed top-0 start-0 vh-100 shadow">
-
-            <div class="text-center py-4 border-bottom border-secondary">
-
-                <h3 class="mb-1">
+                <h4 class="mb-0">
 
                     WBS
 
-                </h3>
+                </h4>
 
                 <small class="text-secondary">
 
@@ -163,7 +57,14 @@
 
             </div>
 
-            <nav class="nav flex-column flex-grow-1">
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas">
+            </button>
+
+        </div>
+
+        <div class="offcanvas-body p-0">
+
+            <nav class="nav flex-column">
 
                 <a href="dashboard.html" class="nav-link text-white px-4 py-3">
                     <i class="bi bi-speedometer2 me-2"></i>
@@ -174,7 +75,7 @@
                     Sales
                 </div>
 
-                <a href="customers.html" class="nav-link  active bg-primary  text-white px-4 py-3">
+                <a href="customers.html" class="nav-link active bg-primary  text-white px-4 py-3">
                     <i class="bi bi-people-fill me-2"></i>
                     Customers
                 </a>
@@ -224,11 +125,101 @@
 
             </nav>
 
-        </aside>
+        </div>
 
-        <!-- content koumans la  -->
+    </div>
 
-        <main class="col-12 col-lg-10 offset-lg-2 p-4 mt-3 mt-lg-0">
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <!-- desktop sidebar -->
+
+            <aside
+                class="d-none d-lg-flex flex-column col-lg-2 bg-dark text-white p-0 position-fixed top-0 start-0 vh-100 shadow">
+
+                <div class="text-center py-4 border-bottom border-secondary">
+
+                    <h3 class="mb-1">
+
+                        WBS
+
+                    </h3>
+
+                    <small class="text-secondary">
+
+                        Wholesale Billing System
+
+                    </small>
+
+                </div>
+
+                <nav class="nav flex-column flex-grow-1">
+
+                    <a href="dashboard.html" class="nav-link text-white px-4 py-3">
+                        <i class="bi bi-speedometer2 me-2"></i>
+                        Dashboard
+                    </a>
+
+                    <div class="text-uppercase text-secondary small fw-bold px-4 pt-4 pb-2">
+                        Sales
+                    </div>
+
+                    <a href="customers.html" class="nav-link  active bg-primary  text-white px-4 py-3">
+                        <i class="bi bi-people-fill me-2"></i>
+                        Customers
+                    </a>
+
+                    <a href="sales-orders.html" class="nav-link text-white px-4 py-3">
+                        <i class="bi bi-cart-check me-2"></i>
+                        Sales Orders
+                    </a>
+
+                    <a href="invoices.html" class="nav-link text-white px-4 py-3">
+                        <i class="bi bi-receipt me-2"></i>
+                        Invoices
+                    </a>
+
+                    <a href="payments.html" class="nav-link text-white px-4 py-3">
+                        <i class="bi bi-cash-stack me-2"></i>
+                        Payments
+                    </a>
+
+                    <div class="text-uppercase text-secondary small fw-bold px-4 pt-4 pb-2">
+                        Inventory
+                    </div>
+
+                    <a href="products.html" class="nav-link text-white px-4 py-3">
+                        <i class="bi bi-box-seam me-2"></i>
+                        Products
+                    </a>
+
+                    <a href="inventory.html" class="nav-link text-white px-4 py-3">
+                        <i class="bi bi-boxes me-2"></i>
+                        Stock
+                    </a>
+
+                    <div class="text-uppercase text-secondary small fw-bold px-4 pt-4 pb-2">
+                        Reports
+                    </div>
+
+                    <a href="statements.html" class="nav-link text-white px-4 py-3">
+                        <i class="bi bi-file-earmark-text me-2"></i>
+                        Statement of Account
+                    </a>
+
+                    <a href="reports.html" class="nav-link text-white px-4 py-3">
+                        <i class="bi bi-bar-chart-line me-2"></i>
+                        Reports
+                    </a>
+
+                </nav>
+
+            </aside>
+
+            <!-- content koumans la  -->
+
+            <main class="col-12 col-lg-10 offset-lg-2 p-4 mt-3 mt-lg-0">
                 <header class="d-flex justify-content-between align-items-center mb-4">
                     <div>
                         <h2 class="mb-0">
@@ -265,6 +256,7 @@
                                 <tr>
                                     <th>Company</th>
                                     <th>BRN</th>
+                                    <th>Phone</th>
                                     <th>Address</th>
                                     <th>Status</th>
                                     <th class="text-center">Action</th>
@@ -314,6 +306,13 @@
 
                             <input type="text" class="form-control" id="companyBrn" required>
                         </div>
+                        <div class="mb-3">
+                            <label for="companyPhone" class="form-label">
+                                Phone Number
+                            </label>
+
+                            <input type="tel" class="form-control" id="companyPhone" placeholder="e.g. +230 5xxx xxxx">
+                        </div>
 
                         <div class="mb-3">
                             <label for="companyAddress" class="form-label">
@@ -342,6 +341,7 @@
             </div>
         </div>
     </div>
+
     <!-- edit the customer modal -->
     <div class="modal fade" id="editCustomerModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
@@ -375,6 +375,13 @@
 
                             <input type="text" class="form-control" id="editCompanyBrn" required>
                         </div>
+                        <div class="mb-3">
+                            <label for="editCompanyPhone" class="form-label">
+                                Phone Number
+                            </label>
+
+                            <input type="tel" class="form-control" id="editCompanyPhone" placeholder="e.g. +230 5xxx xxxx">
+                        </div>
 
                         <div class="mb-3">
                             <label for="editCompanyAddress" class="form-label">
@@ -400,8 +407,10 @@
             </div>
         </div>
     </div>
+
     <div id="toastContainer" class="toast-container position-fixed bottom-0 end-0 p-3">
     </div>
+
     <!-- sts confirm modal -->
     <div class="modal fade" id="statusModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">

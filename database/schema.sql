@@ -19,6 +19,9 @@ CREATE TABLE customers (
         UNIQUE (company_name)
 );
 
+ALTER TABLE customers
+ADD COLUMN phone_number VARCHAR(12)
+
  -- 2. PRODUCTS
  
 CREATE TABLE products (
