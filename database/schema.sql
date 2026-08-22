@@ -20,7 +20,7 @@ CREATE TABLE customers (
 );
 
 ALTER TABLE customers
-ADD COLUMN phone_number VARCHAR(12)
+ADD COLUMN phone_number VARCHAR(12);
 
  -- 2. PRODUCTS
  
