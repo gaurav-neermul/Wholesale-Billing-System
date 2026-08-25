@@ -1,62 +1,42 @@
-const dashboardLoading =
-    document.getElementById("dashboardLoading");
+const dashboardLoading = document.getElementById("dashboardLoading");
 
-const dashboardContent =
-    document.getElementById("dashboardContent");
+const dashboardContent = document.getElementById("dashboardContent");
 
-const dashboardDate =
-    document.getElementById("dashboardDate");
+const dashboardDate = document.getElementById("dashboardDate");
 
-const refreshDashboardBtn =
-    document.getElementById("refreshDashboardBtn");
+const refreshDashboardBtn = document.getElementById("refreshDashboardBtn");
 
-const todaySales =
-    document.getElementById("todaySales");
+const todaySales = document.getElementById("todaySales");
 
-const monthSales =
-    document.getElementById("monthSales");
+const monthSales = document.getElementById("monthSales");
 
-const outstanding =
-    document.getElementById("outstanding");
+const outstanding = document.getElementById("outstanding");
 
-const monthPayments =
-    document.getElementById("monthPayments");
+const monthPayments = document.getElementById("monthPayments");
 
-const activeCustomers =
-    document.getElementById("activeCustomers");
+const activeCustomers = document.getElementById("activeCustomers");
 
-const inactiveCustomers =
-    document.getElementById("inactiveCustomers");
+const inactiveCustomers = document.getElementById("inactiveCustomers");
 
-const totalStock =
-    document.getElementById("totalStock");
+const totalStock = document.getElementById("totalStock");
 
-const lowStock =
-    document.getElementById("lowStock");
+const lowStock = document.getElementById("lowStock");
 
-const outOfStock =
-    document.getElementById("outOfStock");
+const outOfStock = document.getElementById("outOfStock");
 
-const totalOrders =
-    document.getElementById("totalOrders");
+const totalOrders = document.getElementById("totalOrders");
 
-const pendingOrders =
-    document.getElementById("pendingOrders");
+const pendingOrders = document.getElementById("pendingOrders");
 
-const invoicedOrders =
-    document.getElementById("invoicedOrders");
+const invoicedOrders = document.getElementById("invoicedOrders");
 
-const recentInvoices =
-    document.getElementById("recentInvoices");
+const recentInvoices = document.getElementById("recentInvoices");
 
-const recentPayments =
-    document.getElementById("recentPayments");
+const recentPayments = document.getElementById("recentPayments");
 
-const recentOrders =
-    document.getElementById("recentOrders");
+const recentOrders = document.getElementById("recentOrders");
 
-const topProducts =
-    document.getElementById("topProducts");
+const topProducts = document.getElementById("topProducts");
 
 let salesChart = null;
 
